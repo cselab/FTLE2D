@@ -1,0 +1,20 @@
+#===========================
+#	Includes
+#===========================
+
+HOSTNAME?=$(shell hostname)
+
+ifeq ($(HOSTNAME),brutus2.ethz.ch)
+include ./make.brutus
+endif
+
+ifeq ($(HOSTNAME),brutus3.ethz.ch)
+include ./make.brutus
+endif
+
+ifeq ($(HOSTNAME),platformname)
+include ./make.platform
+endif
+
+
+#------- Add here new hosts with compiler, flags, paths for OpenCL, CUDA (and vtk)

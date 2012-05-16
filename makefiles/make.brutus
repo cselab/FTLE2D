@@ -1,0 +1,17 @@
+CC=icc
+LD=$(CC)
+
+ifeq "$(CC)" "gcc"
+CFLAGS += -w -O3 -fopenmp -msse2
+else
+CFLAGS += -w -O3 -openmp -ipo -ip -xHOST
+endif
+
+CFLAGS += $(EXTRADEF) 
+LDFLAGS= $(CFLAGS)
+
+#INCLUDES += -I/cluster/work/infk/diegor/myVTK/include/vtk-5.4 -I$(CUDA_INSTALL_PATH)/include/
+#LIBRARIES += -L/cluster/work/infk/diegor/myVTK/lib/vtk-5.4 -L$(CUDA_INSTALL_PATH)/lib64/ -ldl
+
+INCLUDES += -I/cluster/work/infk/cconti/VTK5.8_gcc/include/vtk-5.8 -I$(CUDA_INSTALL_PATH)/include/
+LIBRARIES += -L/cluster/work/infk/cconti/VTK5.8_gcc/lib/vtk-5.8 -L$(CUDA_INSTALL_PATH)/lib64/ -ldl
