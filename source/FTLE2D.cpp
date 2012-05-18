@@ -373,7 +373,7 @@ vector<Real *> FTLE2D::operator()(vector<Real *>& u, vector<Real>& dt, const Rea
 	bool bContinue = true;
 	while (bContinue)
 	{
-		if (bVerbose) printf("FTLE Frame %d, u_tmp.size = %d\n", iFrameCounter, u_tmp.size());
+		if (bVerbose) printf("FTLE Frame %d, u_tmp.size = %d\n", iFrameCounter, (int)u_tmp.size());
 		
 		result.push_back(_FTLE(u_tmp, dt, iFrameCounter, T));
 		

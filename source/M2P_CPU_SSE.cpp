@@ -452,10 +452,10 @@ void OperatorM2P_CPU_SSE::_m2p_super_aggressive(int sizeX, int sizeY, const floa
 		((unsigned long)u_p) & 0xf != 0 ||
 		sizeX % 16 != 0 || sizeX < 16)
 	{
-		printf("((unsigned long)x_p) & 0xf = %d\n",((unsigned long)x_p) & 0xf);
-		printf("((unsigned long)y_p) & 0xf = %d\n",((unsigned long)y_p) & 0xf);
-		printf("((unsigned long)u_mesh) & 0xf = %d\n",((unsigned long)u_mesh) & 0xf);
-		printf("((unsigned long)u_p) & 0xf = %d\n",((unsigned long)u_p) & 0xf);
+		printf("((unsigned long)x_p) & 0xf = %d\n",(int)(((unsigned long)x_p) & 0xf));
+		printf("((unsigned long)y_p) & 0xf = %d\n",(int)(((unsigned long)y_p) & 0xf));
+		printf("((unsigned long)u_mesh) & 0xf = %d\n",(int)(((unsigned long)u_mesh) & 0xf));
+		printf("((unsigned long)u_p) & 0xf = %d\n",(int)(((unsigned long)u_p) & 0xf));
 		printf("sizeX = %d\n",sizeX);
 		abort();
 	}

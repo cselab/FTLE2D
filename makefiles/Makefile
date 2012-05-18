@@ -99,7 +99,7 @@ endif
 
 LIBRARIES += -lstdc++
 
-INCLUDES += ../source/
+INCLUDES += -I../source/
 
 #===========================
 #	Build Rules
